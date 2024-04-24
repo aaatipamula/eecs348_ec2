@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Practice 2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style type="text/css">
+    body {
+      width: 60%;
+      margin: auto;
+    }
+
+    input {margin: .5rem;}
+
+    div#wrapper {
+      border-radius: 1rem;
+      border: 5px solid black;
+      margin: 1rem;
+    }
+
+    p#dummy-text {
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <script type="text/javascript">
+    function updateParagraph(event) {
+      event.preventDefault()
+
+      let rvalue = document.getElementById("red").value;
+      let gvalue = document.getElementById("green").value;
+      let bvalue = document.getElementById("blue").value;
+      let color =`rgba(${rvalue}, ${gvalue}, ${bvalue})`;
+
+      let rvalueb = document.getElementById("redb").value;
+      let gvalueb = document.getElementById("greenb").value;
+      let bvalueb = document.getElementById("blueb").value;
+      let colorb =`rgba(${rvalueb}, ${gvalueb}, ${bvalueb})`;
+
+      let width = document.getElementById("border-width").value;
+
+      console.log(rvalue, gvalue, bvalue, rvalueb, gvalueb, bvalueb, width)
+
+      text = document.getElementById("dummy-text");
+      border = document.getElementById("wrapper");
+
+      text.style.color = color;
+      border.style.borderColor = colorb;
+      border.style.borderWidth = width + "px";
+    }
+  </script>
+
+  <h1>Practice 2</h1>
+
+  <div id="wrapper">
+    <p id="dummy-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+  </div>
+
+  <form id="user-input" action="#">
+
+    <b>Text Colors: </b>
+
+    <label for="red">Red: </label>
+    <input type="number" id="red" name="red" value="0" min="0" max="255"> 
+
+    <label for="green">Green: </label>
+    <input type="number" id="green" name="green" value="0" min="0" max="255"> 
+
+    <label for="blue">Blue: </label>
+    <input type="number" id="blue" name="blue" value="0" min="0" max="255"> 
+
+    <br>
+    
+    <b>Border Colors: </b>
+
+    <label for="redb">Red: </label>
+    <input type="number" id="redb" name="redb" value="0" min="0" max="255"> 
+
+    <label for="greenb">Green: </label>
+    <input type="number" id="greenb" name="greenb" value="0" min="0" max="255"> 
+
+    <label for="blueb">Blue: </label>
+    <input type="number" id="blueb" name="blueb" value="0" min="0" max="255"> 
+
+    <br>
+
+    <label for="border-width"><b>Border Width: </b></label>
+    <input type="number" id="border-width" name="border-width" value="5" min="0" max="50"> 
+
+    <br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <script type="text/javascript">
+    let form = document.getElementById("user-input");
+    form.addEventListener("submit", updateParagraph);
+  </script>
+</body>
+</html>

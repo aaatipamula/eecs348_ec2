@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8" />
+  <title>Practice 3</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style type="text/css">
+    body {
+      width: 60%;
+      margin: auto;
+    }
+    input {margin: .5rem;}
+  </style>
+</head>
+<body>
+  <script type="text/javascript">
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      p1 = document.getElementById("password").value;
+      p2 = document.getElementById("re-password").value;
+
+      if (p1.length < 8 || p2.length < 8) {
+        alert("Password must be 8 or more characters in length.");
+        return;
+      }
+
+      if (p1 !== p2) {
+        alert("Passwords do not match!");
+      } else {
+        alert("Passwords match, congratulations!");
+      }
+    }
+  </script>
+
+  <h1>Practice 3</h1>
+
+  <form id="passwords">
+    <label for="password">Password: </label>
+    <input type="password" id="password" name="password">
+
+    <br>
+
+    <label for="re-password">Re-Enter Password: </label>
+    <input type="password" id="re-password" name="re-password">
+
+    <br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <script type="text/javascript">
+    form = document.getElementById("passwords");
+    form.addEventListener("submit", handleSubmit);
+  </script>
+</body>
+</html>

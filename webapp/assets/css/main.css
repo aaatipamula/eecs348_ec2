@@ -1,0 +1,25 @@
+body {
+  background-color: #CCDAD1;
+  color: #38302E;
+  width: 60%;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #788585;
+  transition: ease-in-out .2s;
+}
+
+a:hover {
+  color: #9CAEA9;
+}
+
+svg#signature {
+  stroke: #38302E;
+  stroke-width: 3;
+}
+
+svg circle {
+  fill: #38302E;
+}
